@@ -27,7 +27,7 @@
       border-radius: 14px;
       max-width: 440px;
       width: 100%;
-      padding: 24px 20px;
+      padding: 26px 22px;
       box-shadow: 0 12px 36px rgba(0,0,0,0.5);
       text-align: left;
     }
@@ -44,7 +44,7 @@
       margin-bottom: 16px;
     }
     h1 {
-      font-size: 22px;
+      font-size: 21px;
       line-height: 1.35;
       font-weight: 800;
       color: #ffffff;
@@ -52,9 +52,9 @@
     }
     p.lead {
       font-size: 15px;
-      line-height: 1.5;
+      line-height: 1.55;
       color: #b0b8c4;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
     .highlight {
       color: #00e5ff;
@@ -68,7 +68,7 @@
       background: #25d366;
       color: #000;
       text-decoration: none;
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 800;
       padding: 16px 20px;
       border-radius: 10px;
@@ -89,7 +89,7 @@
       text-align: center;
       margin-top: 14px;
       font-size: 12px;
-      color: #6b7787;
+      color: #8a96a6;
       line-height: 1.4;
     }
   </style>
@@ -108,41 +108,42 @@
       <span id="btn-text">VER REMATES EN TELEGRAM</span>
     </a>
 
-    <p class="footer-note">
-      Canal público y gratuito. Solo 4 ofertas al día.<br>Descuentos reales verificados en Mercado Libre México.
-    </p>
+    <p class="footer-note" id="footer-text"></p>
   </div>
 
   <script>
     const variants = [
       {
-        tag: "v1_cuchillo",
-        headline: "Si te vas a quedar a ver la película, por lo menos deja de usar un cuchillo como desarmador.",
-        lead: "Apretar una pija toma 30 segundos. El técnico te cobra <span class='highlight'>$600 pesos</span> porque en tu casa no hay ni unas pinzas de presión. En este canal rastreamos herramientas en Mercado Libre México cuando caen a precio de liquidación.",
-        cta: "VER HERRAMIENTAS EN REMATE"
+        tag: "v1_plomero",
+        headline: "Un cambio de empaque cuesta $15 pesos. El plomero te cobró $800.",
+        lead: "No te cobró por el trabajo. Te cobró porque <span class='highlight'>él sí traía la llave Stilson</span> y tú estabas improvisando con una llave perico oxidada de tu abuelo.<br><br>Rastreamos remates reales de herramientas de trabajo en Mercado Libre México para que armes tu caja sin pagar sobreprecio.",
+        cta: "UNIRME AL CANAL DE TELEGRAM",
+        footer: "Solo 4 alertas al día. Descuentos de verdad, no precios inflados."
       },
       {
-        tag: "v2_plomero",
-        headline: "Un empaque cuesta $15 pesos. El plomero te cobró $800.",
-        lead: "No te cobró por el trabajo. Te cobró porque <span class='highlight'>él sí traía la llave Stilson</span> y tú estabas improvisando con unas pinzas oxidadas. Rastreamos remates reales de herramientas de trabajo para que armes tu caja sin pagar sobreprecio.",
-        cta: "UNIRME AL CANAL DE TELEGRAM"
-      },
-      {
-        tag: "v3_vecino",
+        tag: "v2_vecino",
         headline: "Tu vecino no te quiere prestar su taladro.",
-        lead: "Te dice que sí por educación, pero cada que le tocas la puerta piensa que eres un conchudo. Cómprate tus propias herramientas cuando caigan en <span class='highlight'>descuento real del 30% al 50%</span> en Mercado Libre.",
-        cta: "ENTRAR AL CANAL GRATIS"
+        lead: "Te dice que sí por educación, pero cada que le tocas la puerta para pedirle una herramienta <span class='highlight'>piensa que eres un conchudo</span>.<br><br>Cómprate las tuyas cuando caigan a precio de remate real en Mercado Libre.",
+        cta: "ABRIR CANAL DE TELEGRAM",
+        footer: "Herramientas para taller y mantenimiento de casa con descuento real."
+      },
+      {
+        tag: "v3_combo",
+        headline: "Pedirle prestado el taladro al vecino da pena. Y que el plomero te cobre $800 pesos por cambiar un empaque de $15 porque tú no tienes herramienta, da coraje.",
+        lead: "Deja de pasar vergüenzas y cómprate las tuyas cuando caigan en <span class='highlight'>remate real</span> en Mercado Libre México.",
+        cta: "VER REMATES EN TELEGRAM",
+        footer: "Solo 4 alertas al día. Descuentos de verdad para el taller y la casa."
       }
     ];
 
-    // Rotación aleatoria equitativa (33.3% cada una)
+    // Rotación aleatoria equitativa entre las 3 variantes aprobadas
     const pick = variants[Math.floor(Math.random() * variants.length)];
 
     document.getElementById("headline").innerText = pick.headline;
     document.getElementById("body-text").innerHTML = pick.lead;
     document.getElementById("btn-text").innerText = pick.cta;
+    document.getElementById("footer-text").innerText = pick.footer;
 
-    // Ajustar link con parámetro de tracking
     const baseLink = "https://t.me/ofertas_herramientas_mx";
     document.getElementById("cta-btn").href = baseLink;
   </script>
