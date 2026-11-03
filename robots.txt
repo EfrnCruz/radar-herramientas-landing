@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://efrncruz.github.io/radar-herramientas-landing/sitemap.xml
